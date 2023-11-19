@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="32dp"
+
+    android:fitsSystemWindows="true"
+    tools:context=".activities.StatisticsActivity">
+
+    <RelativeLayout
+        android:id="@+id/menu_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/rounded_r24"
+            android:backgroundTint="@color/accent"
+            android:contentDescription="@string/abrir_estatisticas"
+            android:elevation="2dp"
+            android:padding="12dp"
+            android:src="@drawable/round_arrow_back_ios_24"
+            app:tint="@color/text" />
+
+        <ImageView
+            android:id="@+id/btn_opcoes"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="2dp"
+            android:background="@drawable/rounded_r24"
+            android:backgroundTint="@color/accent"
+            android:contentDescription="@string/abrir_configura_es"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:src="@drawable/round_short_text_24"
+            android:visibility="gone"
+            app:tint="@color/textLight" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/title_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:minHeight="165dp">
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-80dp"
+            android:background="@drawable/rounded_r24"
+            android:backgroundTint="@color/accent"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:rotation="-10" />
+
+        <TextView
+            android:id="@+id/bem_vindo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingHorizontal="32dp"
+            android:text="@string/seu_nresumo"
+            android:textAlignment="textEnd"
+            android:textColor="@color/text"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_holder"
+        android:layout_marginHorizontal="32dp"
+        app:cardBackgroundColor="@color/textLight"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="@string/medidor_de_mood"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_gravity="center_horizontal"
+                    android:max="100"
+                    android:progress="20"
+                    app:indicatorColor="@color/blue"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorSize="144dp"
+                    app:trackColor="@color/transparent"
+                    app:trackThickness="16dp" />
+                <!--360 100-->
+                <!--x 20-->
+                <!--x = 360*20/100-->
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress2"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_gravity="center_horizontal"
+                    android:max="100"
+                    android:progress="20"
+                    android:rotation="72"
+                    app:indicatorColor="@color/purple"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorSize="144dp"
+                    app:trackColor="@color/transparent"
+                    app:trackThickness="16dp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress3"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_gravity="center_horizontal"
+                    android:max="100"
+                    android:progress="20"
+                    android:rotation="144"
+                    app:indicatorColor="@color/orange"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorSize="144dp"
+                    app:trackColor="@color/transparent"
+                    app:trackThickness="16dp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress4"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_gravity="center_horizontal"
+                    android:max="100"
+                    android:progress="20"
+                    android:rotation="216"
+                    app:indicatorColor="@color/green"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorSize="144dp"
+                    app:trackColor="@color/transparent"
+                    app:trackThickness="16dp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress5"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_gravity="center_horizontal"
+                    android:max="100"
+                    android:progress="20"
+                    android:rotation="288"
+                    app:indicatorColor="@color/red"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorSize="144dp"
+                    app:trackColor="@color/transparent"
+                    app:trackThickness="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_porcentagem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/emoji"
+                    android:textColor="@color/text"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/text"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_registros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card"
+        android:layout_marginHorizontal="32dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_holder"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp"
+                android:weightSum="2">
+
+                <include
+                    layout="@layout/item_estatistica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+
+                <include
+                    layout="@layout/item_estatistica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp"
+                android:weightSum="2">
+
+                <include
+                    layout="@layout/item_estatistica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+
+                <include
+                    layout="@layout/item_estatistica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
