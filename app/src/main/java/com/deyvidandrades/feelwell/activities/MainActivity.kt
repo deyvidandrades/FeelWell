@@ -12,6 +12,8 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.text.format.DateUtils
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -26,6 +28,7 @@ import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.adaptadores.AdaptadorRegistros
 import com.deyvidandrades.feelwell.assistentes.AnimacaoBotao
 import com.deyvidandrades.feelwell.assistentes.AssistentePersistencia
+import com.deyvidandrades.feelwell.assistentes.DataUtil
 import com.deyvidandrades.feelwell.objetos.Registro
 
 class MainActivity : AppCompatActivity() {
@@ -92,6 +95,8 @@ class MainActivity : AppCompatActivity() {
         arrayRegistros.clear()
 
         val registros = AssistentePersistencia.carregarRegistros(this)
+
+        registros.sortedDescending()
 
         if (busca != "") {
             for (item in registros)
