@@ -3,8 +3,6 @@
 
 ![feelwell-banner](https://raw.githubusercontent.com/deyvidandrades/FeelWell/master/feelWell-banner.png)
 
-## Descrição do projeto
-
 O **FeelWell** é um aplicativo inovador que foi desenvolvido como projeto prátido da disciplina de Interação Humano-Computador da Universidade Federal de Lavras. Onde o objetivo foi criar uma aplicação que trabalhasse conceitos de **design centrado no humano** e que resolvesse algum problema relacionado aos **Objetivos do Desenvolvimento Sustentável (ODS)** da ONU. 
 
 Para desenvolver o projeto, foquei no ODS de número 3, com foco no bem-estar e na garantia de vidas saudáveis para todos. 
