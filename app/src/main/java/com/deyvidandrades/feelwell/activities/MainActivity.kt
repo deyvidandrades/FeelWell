@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
 
         val btnStatistics: ImageView = findViewById(R.id.btn_statistics)
         val btnConfig: ImageView = findViewById(R.id.btn_opcoes)
-        val btnAdd: RelativeLayout = findViewById(R.id.btn_add)
         val etBuscar: EditText = findViewById(R.id.et_buscar)
 
         //Recycler Registros
@@ -79,10 +78,6 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, ConfiguracoesActivity::class.java)
             startActivity(intent)
-        }
-
-        btnAdd.setOnClickListener { v ->
-            AnimacaoBotao.animar(v)
         }
 
         carregarRegistros()
