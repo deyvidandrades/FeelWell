@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
     private fun carregarRegistros(busca: String = "") {
         arrayRegistros.clear()
 
-        val registros = AssistentePersistencia.carregarRegistros(this)
+        val registros = AssistentePersistencia.getRegistros()
 
         registros.sortedDescending()
 

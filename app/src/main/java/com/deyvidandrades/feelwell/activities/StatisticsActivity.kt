@@ -45,7 +45,7 @@ class StatisticsActivity : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
     private fun carregarRegistros() {
         arrayEstatisticas.clear()
-        val registros = AssistentePersistencia.carregarRegistros(this)
+        val registros = AssistentePersistencia.getRegistros()
 
         for (emocao in Registro.Sentimento.entries) {
             var numSentimento = 0

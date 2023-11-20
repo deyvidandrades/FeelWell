@@ -37,17 +37,17 @@
 
     <TextView
         android:id="@+id/tv_anotacao"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="32dp"
         android:text="@string/tem_anota_o"
         android:textColor="@color/text"
         android:textSize="16sp"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
     <LinearLayout
-        android:id="@+id/registro1"
+        android:id="@+id/holder_ocorrencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_r16"
@@ -66,6 +66,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/data_ocorrencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/qua_17_set"
@@ -74,6 +75,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/descricao_ocorrencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/voc_tamb_m_se_sentiu_assim"
@@ -83,7 +85,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/emoji1"
+            android:id="@+id/emoji_ocorrencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|end"
