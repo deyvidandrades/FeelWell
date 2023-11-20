@@ -49,6 +49,7 @@ dependencies {
     implementation("androidx.preference:preference-ktx:1.2.1")
 
     implementation("nl.dionsegijn:konfetti-xml:2.0.3")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 
     //Tests
     testImplementation("junit:junit:4.13.2")

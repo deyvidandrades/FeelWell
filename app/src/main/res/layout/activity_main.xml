@@ -106,10 +106,18 @@
             android:background="@color/backgroundLight" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_registros"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/busca_holder" />
+        android:layout_below="@+id/busca_holder">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_registros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/busca_holder" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

@@ -12,11 +12,8 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.format.DateUtils
-import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
@@ -24,11 +21,11 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.adaptadores.AdaptadorRegistros
 import com.deyvidandrades.feelwell.assistentes.AnimacaoBotao
 import com.deyvidandrades.feelwell.assistentes.AssistentePersistencia
-import com.deyvidandrades.feelwell.assistentes.DataUtil
 import com.deyvidandrades.feelwell.objetos.Registro
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         val btnStatistics: ImageView = findViewById(R.id.btn_statistics)
         val btnConfig: ImageView = findViewById(R.id.btn_opcoes)
         val etBuscar: EditText = findViewById(R.id.et_buscar)
+        val mySwipeRefreshLayout: SwipeRefreshLayout = findViewById(R.id.swiperefresh)
 
         //Recycler Registros
         val recyclerRegistros: RecyclerView = findViewById(R.id.recycler_registros)
@@ -88,6 +86,11 @@ class MainActivity : AppCompatActivity() {
         createNotificationChannel()
 
         criarNotificacao()
+
+        mySwipeRefreshLayout.setOnRefreshListener {
+            carregarRegistros()
+            mySwipeRefreshLayout.isRefreshing = false
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -124,15 +127,15 @@ class MainActivity : AppCompatActivity() {
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .addAction(
                 R.drawable.baseline_spa_24,
-                "${Registro.Sentimento.ANIMADO.emoji} ${
-                    Registro.Sentimento.ANIMADO.name.lowercase().replaceFirstChar { it.uppercase() }
+                "${Registro.Sentimento.FELIZ.emoji} ${
+                    Registro.Sentimento.FELIZ.name.lowercase().replaceFirstChar { it.uppercase() }
                 }",
                 null
             )
             .addAction(
                 R.drawable.baseline_spa_24,
-                "${Registro.Sentimento.RELAXADO.emoji} ${
-                    Registro.Sentimento.RELAXADO.name.lowercase()
+                "${Registro.Sentimento.ESTRESSADO.emoji} ${
+                    Registro.Sentimento.ESTRESSADO.name.lowercase()
                         .replaceFirstChar { it.uppercase() }
                 }",
                 null
