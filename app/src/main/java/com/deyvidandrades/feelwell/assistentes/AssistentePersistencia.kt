@@ -1,31 +1,52 @@
 package com.deyvidandrades.feelwell.assistentes
 
-import android.content.Context
 import com.deyvidandrades.feelwell.objetos.Registro
 import java.util.Calendar
+import kotlin.random.Random
 
 
-class AssistentePersistencia {
+object AssistentePersistencia {
 
-    companion object {
-        private var registros = ArrayList<Registro>()
+    private var registros = ArrayList<Registro>()
 
-        fun carregarRegistros(
-            context: Context
-        ): ArrayList<Registro> {
-            registros.clear()
+    init {
+        gerarRegistros()
+    }
 
-            for (i in 0..30) {
-                registros.add(
-                    Registro(
-                        DataUtil.getTimestampFromDay(i, Calendar.getInstance().timeInMillis),
-                        "isso é um teste",
-                        Registro.Sentimento.values().random()
-                    )
+    private fun gerarRegistros() {
+        registros.clear()
+
+        for (i in 0..30) {
+            val registro = Registro.Sentimento.values().random()
+            registros.add(
+                Registro(
+                    DataUtil.getTimestampFromDay(i, Calendar.getInstance().timeInMillis),
+                    if (Random.nextInt(0, 2) == 1)
+                        "Hoje estou me sendindo um pouco ${registro.name.lowercase()}.." else "",
+                    registro
                 )
-            }
-
-            return registros
+            )
         }
+        registros.sortedDescending()
+    }
+
+    fun getRegistros() = registros
+
+    fun getOcorrencia(registro: Registro): Registro? {
+        val registrosAux = registros
+        registrosAux.remove(registro)
+
+        for (reg in registrosAux)
+            if (reg.getSentimento().name == registro.getSentimento().name)
+                return reg
+        return null
+    }
+
+    fun addRegistro(registro: Registro) {
+        registros.add(registro)
+    }
+
+    fun delRegistro(registro: Registro) {
+        registros.remove(registro)
     }
 }
