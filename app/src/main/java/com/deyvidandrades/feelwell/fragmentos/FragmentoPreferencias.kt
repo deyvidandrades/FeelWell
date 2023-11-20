@@ -19,18 +19,12 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
         val notificacoes: SwitchPreference? = findPreference("notificacoes")
-        val notificacaoRecorde: SwitchPreference? = findPreference("notificacao_recorde")
         val notificacaoDiaria: SwitchPreference? = findPreference("notificacao_diaria")
-        val preferenciaReset: Preference? = findPreference("reset")
-
-        val debugPrimeiro: EditTextPreference? = findPreference("debug_primeiro")
-        val debugRecorde: EditTextPreference? = findPreference("debug_recorde")
 
         val versao: Preference? = findPreference("versao")
         val preferenciaPrivacidade: Preference? = findPreference("privacidade")
 
         val seekBarHorario: SeekBarPreference? = findPreference("horario")
-
 
         val dados = AssistentePreferencias.getPreferencias(requireContext())
 
@@ -88,7 +82,6 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
 
         notificacoes!!.setOnPreferenceChangeListener { _, newValue ->
             if (newValue == false) {
-                notificacaoRecorde!!.isChecked = false
                 notificacaoDiaria!!.isChecked = false
             }
 
