@@ -29,3 +29,4 @@ Dada a descrição do aplicativo e tendo em mente os tipo de dados registrados n
 * Gson
 
 # Licença
+[LICENCE](LICENCE.md)
