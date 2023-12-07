@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.deyvidandrades.feelwell"
         minSdk = 28
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "0.0.1 (Alpha)"
 
@@ -47,9 +47,10 @@ dependencies {
     //Adicional dependencies
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.preference:preference-ktx:1.2.1")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 
     implementation("nl.dionsegijn:konfetti-xml:2.0.3")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+    implementation("com.google.code.gson:gson:2.10.1")
 
     //Tests
     testImplementation("junit:junit:4.13.2")

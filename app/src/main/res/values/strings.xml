@@ -69,4 +69,5 @@
     <string name="uld_politica">https://deyvidandrades.github.io/FeelWell/politica/</string>
     <string name="channel_description">criar_registro</string>
     <string name="medidor_de_mood">Medidor de mood</string>
+    <string name="registros_removidos">Todos os registros foram removidos\n</string>
 </resources>
