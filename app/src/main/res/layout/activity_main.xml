@@ -58,7 +58,7 @@
             android:layout_height="150dp"
             android:layout_marginStart="-80dp"
             android:background="@drawable/rounded_r24"
-            android:backgroundTint="@color/accent"
+            android:backgroundTint="?android:colorAccent"
             android:paddingHorizontal="16dp"
             android:paddingVertical="4dp"
             android:rotation="10" />
@@ -70,7 +70,6 @@
             android:layout_centerVertical="true"
             android:paddingHorizontal="32dp"
             android:text="@string/bem_vindo_nde_volta"
-            android:textColor="@color/text"
             android:textSize="48sp"
             android:textStyle="bold" />
 

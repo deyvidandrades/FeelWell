@@ -58,7 +58,7 @@
             android:paddingHorizontal="32dp"
             android:text="@string/mude_as_configura_es"
             android:textAlignment="textEnd"
-            android:textColor="@color/text"
+            android:textColor="?android:textColor"
             android:textSize="48sp"
             android:textStyle="bold" />
 

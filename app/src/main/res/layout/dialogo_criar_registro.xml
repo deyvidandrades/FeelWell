@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rounded_r24_top"
-    android:backgroundTint="@color/background"
+    android:backgroundTint="?android:colorPrimary"
     android:orientation="vertical"
     android:padding="24dp">
 
@@ -13,7 +13,7 @@
         android:layout_height="4dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/rounded_r16"
-        android:backgroundTint="@color/accent" />
+        android:backgroundTint="?android:colorAccent" />
 
     <TextView
         android:id="@+id/tv_data"
@@ -22,7 +22,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
         android:text="@string/seg_30_out"
-        android:textColor="@color/text"
+        android:textColor="?android:textColor"
         android:textSize="32sp"
         android:textStyle="bold" />
 
@@ -43,7 +43,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
         android:text="@string/seg_30_out"
-        android:textColor="@color/text"
+        android:textColor="?android:textColor"
         android:textSize="16sp" />
 
     <EditText
@@ -60,7 +60,7 @@
         android:minHeight="48sp"
         android:minLines="2"
         android:textAlignment="center"
-        android:textColor="@color/text"
+        android:textColor="?android:textColor"
         android:textSize="16sp" />
 
     <RelativeLayout
