@@ -25,7 +25,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.adaptadores.AdaptadorRegistros
 import com.deyvidandrades.feelwell.assistentes.AnimacaoBotao
-import com.deyvidandrades.feelwell.assistentes.AssistentePersistencia
+import com.deyvidandrades.feelwell.assistentes.Persistencia
 import com.deyvidandrades.feelwell.objetos.Registro
 
 class MainActivity : AppCompatActivity() {
@@ -97,9 +97,7 @@ class MainActivity : AppCompatActivity() {
     private fun carregarRegistros(busca: String = "") {
         arrayRegistros.clear()
 
-        val registros = AssistentePersistencia.getRegistros()
-
-        registros.sortedDescending()
+        val registros = Persistencia(this).getRegistros()
 
         if (busca != "") {
             for (item in registros)
@@ -108,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         } else
             arrayRegistros.addAll(registros)
 
-        arrayRegistros.sortedDescending()
+        arrayRegistros.sorted()
         adaptadorRegistros.notifyDataSetChanged()
     }
 

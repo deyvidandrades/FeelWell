@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.adaptadores.AdaptadorEstatistica
 import com.deyvidandrades.feelwell.assistentes.AnimacaoBotao
-import com.deyvidandrades.feelwell.assistentes.AssistentePersistencia
+import com.deyvidandrades.feelwell.assistentes.Persistencia
 import com.deyvidandrades.feelwell.objetos.Registro
 import com.deyvidandrades.feelwell.objetos.RegistroEstatistica
 
@@ -45,7 +45,8 @@ class StatisticsActivity : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
     private fun carregarRegistros() {
         arrayEstatisticas.clear()
-        val registros = AssistentePersistencia.getRegistros()
+        val registros =
+            Persistencia(this).getRegistros()
 
         for (emocao in Registro.Sentimento.entries) {
             var numSentimento = 0

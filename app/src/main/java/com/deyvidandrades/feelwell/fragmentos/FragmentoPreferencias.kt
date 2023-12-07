@@ -4,14 +4,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import androidx.preference.EditTextPreference
+import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreference
 import com.deyvidandrades.feelwell.R
-import com.deyvidandrades.meusdias.assistentes.AssistentePreferencias
-import com.deyvidandrades.meusdias.assistentes.Chaves
+import com.deyvidandrades.feelwell.assistentes.Persistencia
 
 class FragmentoPreferencias : PreferenceFragmentCompat() {
 
@@ -23,13 +22,12 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
 
         val versao: Preference? = findPreference("versao")
         val preferenciaPrivacidade: Preference? = findPreference("privacidade")
+        val preferenciaDeletar: Preference? = findPreference("deletar")
 
         val seekBarHorario: SeekBarPreference? = findPreference("horario")
 
-        val dados = AssistentePreferencias.getPreferencias(requireContext())
-
         seekBarHorario?.apply {
-            value = dados[Chaves.HORARIO.value]!!.toInt()
+            value = Persistencia(requireContext()).getHorario()
         }
 
         val info = requireContext().packageManager.getPackageInfo(
@@ -37,48 +35,9 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
         )
 
         versao?.apply {
-            summary = "${getString(R.string.app_name)} v${info.versionName}\nDesenvolvido por @deyvidandrades"
+            summary =
+                "${getString(R.string.app_name)} v${info.versionName}\nDesenvolvido por @deyvidandrades"
         }
-
-        /*todo
-        debugRecorde?.setDefaultValue(
-            dados[Chaves.RECORDE.value]!!.toInt()
-        )
-        debugPrimeiro?.setDefaultValue(
-            dados[Chaves.PRIMEIRO.value]!!.toLong()
-        )
-
-        debugRecorde!!.setOnPreferenceChangeListener { _, newValue ->
-            AssistentePreferencias.setPreferencias(
-                requireContext(),
-                Chaves.RECORDE,
-                newValue.toString()
-            )
-            true
-        }
-        debugPrimeiro!!.setOnPreferenceChangeListener { _, newValue ->
-            AssistentePreferencias.setPreferencias(
-                requireContext(),
-                Chaves.PRIMEIRO,
-                newValue.toString()
-            )
-            true
-        }
-
-        preferenciaReset!!.setOnPreferenceClickListener {
-            AssistentePreferencias.setPreferencias(
-                requireContext(),
-                Chaves.PRIMEIRO,
-                Calendar.getInstance().timeInMillis.toString()
-            )
-
-            AssistentePreferencias.setPreferencias(
-                requireContext(), Chaves.RECORDE, "0",
-            )
-
-            true
-        }
-        */
 
         notificacoes!!.setOnPreferenceChangeListener { _, newValue ->
             if (newValue == false) {
@@ -89,20 +48,24 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
         }
 
         seekBarHorario!!.setOnPreferenceChangeListener { _, newValue ->
-            //todo AssistenteAlarmManager.cancelarAlarme(requireContext())
-            // AssistenteAlarmManager.criarAlarme(requireContext())
-
-            AssistentePreferencias.setPreferencias(
-                requireContext(), Chaves.HORARIO, newValue.toString()
-            )
-
+            Persistencia(requireContext()).setHorario(newValue.toString().toInt())
             true
         }
 
-
         preferenciaPrivacidade?.setOnPreferenceClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uld_politica)))
+            val browserIntent =
+                Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uld_politica)))
             startActivity(browserIntent)
+            true
+        }
+
+        preferenciaDeletar?.setOnPreferenceClickListener {
+            Persistencia(requireContext()).removerTodosRegistros()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.registros_removidos),
+                Toast.LENGTH_LONG
+            ).show()
             true
         }
     }

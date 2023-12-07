@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.deyvidandrades.feelwell.R
-import com.deyvidandrades.feelwell.assistentes.AssistentePersistencia
+import com.deyvidandrades.feelwell.assistentes.Persistencia
 import com.deyvidandrades.feelwell.objetos.Registro
 import com.deyvidandrades.feelwell.objetos.Registro.Sentimento
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -38,7 +38,7 @@ class DialogoRegistro : BottomSheetDialogFragment() {
         tvAnotacao.visibility = if (registro.getAnotacao() != "") View.VISIBLE else View.GONE
         tvAnotacao.text = registro.getAnotacao()
 
-        val registroOcorrencia = AssistentePersistencia.getOcorrencia(registro)
+        val registroOcorrencia = Persistencia(requireContext()).getOcorrencia(registro)
 
         holderOcorrencia.visibility = if (registroOcorrencia != null) View.VISIBLE else View.GONE
         if (registroOcorrencia != null) {

@@ -12,6 +12,7 @@ import android.widget.TextView
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.activities.MainActivity
 import com.deyvidandrades.feelwell.assistentes.AnimacaoBotao
+import com.deyvidandrades.feelwell.assistentes.Persistencia
 import com.deyvidandrades.feelwell.objetos.Registro
 import com.deyvidandrades.feelwell.objetos.Registro.Sentimento
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -54,7 +55,14 @@ class DialogoCriarRegistro : BottomSheetDialogFragment() {
         btnSave.setOnClickListener { v ->
             AnimacaoBotao.animar(v)
 
-            //todo salvar
+            Persistencia(requireContext()).adicionarRegistro(
+                Registro(
+                    Calendar.getInstance().timeInMillis,
+                    etAnotacao.text.toString(),
+                    sentimento
+                )
+            )
+
             val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
             activity?.finish()
