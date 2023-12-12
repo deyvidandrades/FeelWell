@@ -10,6 +10,8 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreference
 import com.deyvidandrades.feelwell.R
+import com.deyvidandrades.feelwell.activities.StatisticsActivity
+import com.deyvidandrades.feelwell.activities.TermosActivity
 import com.deyvidandrades.feelwell.assistentes.Persistencia
 
 class FragmentoPreferencias : PreferenceFragmentCompat() {
@@ -53,9 +55,11 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
         }
 
         preferenciaPrivacidade?.setOnPreferenceClickListener {
-            val browserIntent =
-                Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uld_politica)))
-            startActivity(browserIntent)
+            //val browserIntent =
+            //    Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uld_politica)))
+            //startActivity(browserIntent)
+            val intent = Intent(requireContext(), TermosActivity::class.java)
+            startActivity(intent)
             true
         }
 

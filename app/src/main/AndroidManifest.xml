@@ -28,6 +28,7 @@
         <activity android:name="com.deyvidandrades.feelwell.activities.StatisticsActivity" />
         <activity android:name="com.deyvidandrades.feelwell.activities.ConfiguracoesActivity" />
         <activity android:name="com.deyvidandrades.feelwell.activities.CriarRegistroActivity" />
+        <activity android:name="com.deyvidandrades.feelwell.activities.TermosActivity" />
     </application>
 
 </manifest>
