@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@drawable/rounded_r24"
-    android:backgroundTint="@color/textLight"
+    android:backgroundTint="?android:colorAccent"
     android:elevation="1dp"
     android:gravity="center"
     android:orientation="vertical"
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/emoji"
-        android:textColor="@color/text"
+        android:textColor="?android:textColor"
         android:textSize="48sp"
         android:textStyle="bold" />
 
@@ -27,6 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/tem_anota_o"
-        android:textColor="@color/text"
+        android:textColor="?android:textColor"
         android:textSize="12sp" />
 </LinearLayout>

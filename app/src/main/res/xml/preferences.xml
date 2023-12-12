@@ -31,6 +31,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="categoria_customizacao"
+        android:title="Customização"
+        app:initialExpandedChildrenCount="3">
+
+        <SwitchPreference
+            android:icon="@drawable/round_dark_mode_24"
+            android:key="tema_escuro"
+            android:defaultValue="false"
+            android:title="Tema escuro" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="categoria_dados"
         android:title="Dados"
         app:initialExpandedChildrenCount="3">

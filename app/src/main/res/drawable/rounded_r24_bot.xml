@@ -5,6 +5,6 @@
         android:bottomLeftRadius="24dp"
         android:bottomRightRadius="24dp" />
 
-    <solid android:color="@color/backgroundLight" />
+    <solid android:color="?android:textColor" />
 
 </shape>

@@ -24,12 +24,11 @@
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/rounded_r24"
-            android:backgroundTint="@color/accent"
+            android:backgroundTint="?android:colorAccent"
             android:contentDescription="@string/abrir_estatisticas"
             android:elevation="2dp"
             android:padding="12dp"
-            android:src="@drawable/round_arrow_back_ios_24"
-            app:tint="@color/text" />
+            android:src="@drawable/round_arrow_back_ios_24" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -45,7 +44,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="-80dp"
             android:background="@drawable/rounded_r24"
-            android:backgroundTint="@color/accent"
+            android:backgroundTint="?android:colorAccent"
             android:paddingHorizontal="16dp"
             android:paddingVertical="4dp"
             android:rotation="-10" />
@@ -69,7 +68,7 @@
         android:layout_height="1dp"
         android:layout_below="@id/title_holder"
         android:alpha=".1"
-        android:background="@color/backgroundLight" />
+        android:background="?android:textColor" />
 
     <ScrollView
         android:layout_width="match_parent"

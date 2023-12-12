@@ -2,15 +2,14 @@ package com.deyvidandrades.feelwell.fragmentos
 
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreference
 import com.deyvidandrades.feelwell.R
-import com.deyvidandrades.feelwell.activities.StatisticsActivity
 import com.deyvidandrades.feelwell.activities.TermosActivity
 import com.deyvidandrades.feelwell.assistentes.Persistencia
 
@@ -21,6 +20,7 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
 
         val notificacoes: SwitchPreference? = findPreference("notificacoes")
         val notificacaoDiaria: SwitchPreference? = findPreference("notificacao_diaria")
+        val temaEscuro: SwitchPreference? = findPreference("tema_escuro")
 
         val versao: Preference? = findPreference("versao")
         val preferenciaPrivacidade: Preference? = findPreference("privacidade")
@@ -45,6 +45,12 @@ class FragmentoPreferencias : PreferenceFragmentCompat() {
             if (newValue == false) {
                 notificacaoDiaria!!.isChecked = false
             }
+
+            true
+        }
+
+        temaEscuro!!.setOnPreferenceChangeListener { _, newValue ->
+            AppCompatDelegate.setDefaultNightMode(if (newValue as Boolean) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO)
 
             true
         }

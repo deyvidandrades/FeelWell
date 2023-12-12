@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rounded_r24_top"
-    android:backgroundTint="?android:colorPrimary"
+    android:backgroundTint="@color/transparent"
     android:orientation="vertical"
     android:padding="24dp">
 
@@ -33,7 +32,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:text="@string/emoji1"
-        android:textColor="@color/textLight"
+        android:textColor="?android:textColor"
         android:textSize="48sp" />
 
     <TextView
@@ -80,12 +79,11 @@
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/rounded_r24"
-            android:backgroundTint="@color/accent"
+            android:backgroundTint="?android:colorAccent"
             android:contentDescription="@string/compartilhar_emocao"
             android:elevation="1dp"
             android:padding="12dp"
-            android:src="@drawable/round_share_24"
-            app:tint="@color/text" />
+            android:src="@drawable/round_share_24" />
 
         <TextView
             android:id="@+id/btn_cancelar"
@@ -99,7 +97,7 @@
             android:minHeight="48dp"
             android:text="@string/cancelar"
             android:textAlignment="center"
-            android:textColor="@color/text"
+            android:textColor="?android:textColor"
             android:textSize="16sp" />
 
         <ImageView
@@ -112,11 +110,10 @@
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/rounded_r24"
-            android:backgroundTint="@color/accent"
+            android:backgroundTint="?android:colorAccent"
             android:contentDescription="@string/salvar_o_novo_registro"
             android:elevation="1dp"
             android:padding="8dp"
-            android:src="@drawable/round_check_24"
-            app:tint="@color/text" />
+            android:src="@drawable/round_check_24" />
     </RelativeLayout>
 </LinearLayout>

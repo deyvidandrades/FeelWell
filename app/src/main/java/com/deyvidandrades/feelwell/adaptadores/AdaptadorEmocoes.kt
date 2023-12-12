@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.RecyclerView
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.activities.OnItemClickListener
@@ -41,7 +42,17 @@ class AdaptadorEmocoes(
         holder.tvSentimentoEmoji.text = sentimento.getSentimento().emoji
 
         holder.li_bg.backgroundTintList = ColorStateList.valueOf(
-            if (sentimento.isSelecionado()) context.getColor(R.color.accent) else context.getColor(R.color.textLight)
+            if (sentimento.isSelecionado()) context.getColor(
+                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
+                    R.color.light_accent
+                else
+                    R.color.dark_accent
+            ) else context.getColor(
+                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
+                    R.color.light_text
+                else
+                    R.color.dark_text
+            )
         )
 
         holder.itemView.setOnClickListener { v ->

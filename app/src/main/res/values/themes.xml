@@ -1,21 +1,23 @@
 <resources>
 
     <style name="Base.Theme.FeelWell" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:colorBackground">@color/background</item>
-        <item name="colorPrimary">@color/background</item>
-        <item name="colorAccent">@color/accent</item>
+        <item name="android:colorBackground">@color/light_background</item>
+        <item name="colorPrimary">@color/light_background</item>
+        <item name="android:colorPrimary">@color/light_background</item>
+        <item name="colorAccent">@color/light_accent</item>
+        <item name="android:colorAccent">@color/light_accent</item>
 
-        <item name="android:textColor">@color/text</item>
+        <item name="android:textColor">@color/light_text</item>
 
-        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:statusBarColor">@color/light_background</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/light_background</item>
         <item name="android:windowLightNavigationBar">true</item>
 
-        <item name="android:textColorPrimary">@color/text</item>
-        <item name="android:textColorSecondary">@color/text</item>
+        <item name="android:textColorPrimary">@color/light_text</item>
+        <item name="android:textColorSecondary">@color/light_text</item>
 
-        <item name="preferenceCategoryTitleTextColor">@color/text</item>
+        <item name="preferenceCategoryTitleTextColor">@color/light_text</item>
         <item name="preferenceCategoryTitleTextAppearance">
             @style/TextAppearance.Material3.ActionBar.Title
         </item>
@@ -26,10 +28,10 @@
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="android:windowLightStatusBar">true</item>
-        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenBackground">@color/light_background</item>
 
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
-        <item name="windowSplashScreenIconBackgroundColor">@color/backgroundLight</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/light_background</item>
 
         <item name="windowSplashScreenAnimationDuration">1500</item>
         <item name="android:windowActionBar">false</item>

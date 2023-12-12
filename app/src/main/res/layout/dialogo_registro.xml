@@ -32,7 +32,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginVertical="32dp"
         android:text="@string/emoji1"
-        android:textColor="@color/textLight"
+        android:textColor="?android:textColor"
         android:textSize="48sp" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="32dp"
         android:text="@string/tem_anota_o"
-        android:textColor="@color/text"
+        android:textColor="?android:textColor"
         android:textSize="16sp"
         android:visibility="gone"/>
 
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_r16"
-        android:backgroundTint="@color/textLight"
+        android:backgroundTint="?android:colorAccent"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
         android:paddingVertical="32dp"
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/qua_17_set"
-                android:textColor="@color/text"
+                android:textColor="?android:textColor"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/voc_tamb_m_se_sentiu_assim"
-                android:textColor="@color/text"
+                android:textColor="?android:textColor"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -92,7 +92,7 @@
             android:layout_weight="2"
             android:text="@string/emoji1"
             android:textAlignment="textEnd"
-            android:textColor="@color/textLight"
+            android:textColor="?android:colorAccent"
             android:textSize="32sp" />
 
     </LinearLayout>
