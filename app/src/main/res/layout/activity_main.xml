@@ -114,6 +114,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_registros"
+            android:contentDescription="@string/lista_com_os_registros_emocionais"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/busca_holder" />

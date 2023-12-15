@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "com.deyvidandrades.feelwell"
-        minSdk = 28
+        minSdk = 29
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.0.1 (Alpha)"
+        versionCode = 2
+        versionName = "0.0.2 (Alpha)"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -1,17 +1,17 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.FeelWell" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:colorBackground">@color/dark_background</item>
-        <item name="colorPrimary">@color/dark_background</item>
-        <item name="android:colorPrimary">@color/dark_background</item>
-        <item name="colorAccent">@color/dark_accent</item>
-        <item name="android:colorAccent">@color/dark_accent</item>
+        <item name="android:colorBackground">@color/dark_accent</item>
+        <item name="colorPrimary">@color/dark_accent</item>
+        <item name="android:colorPrimary">@color/dark_accent</item>
+        <item name="colorAccent">@color/dark_background</item>
+        <item name="android:colorAccent">@color/dark_background</item>
 
         <item name="android:textColor">@color/dark_text</item>
 
-        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:statusBarColor">@color/dark_accent</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:navigationBarColor">@color/dark_background</item>
+        <item name="android:navigationBarColor">@color/dark_accent</item>
         <item name="android:windowLightNavigationBar">false</item>
 
         <item name="android:textColorPrimary">@color/dark_text</item>
