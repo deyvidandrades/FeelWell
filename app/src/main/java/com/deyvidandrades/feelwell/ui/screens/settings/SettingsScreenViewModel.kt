@@ -72,7 +72,7 @@ class SettingsScreenViewModel(private val settingsRepository: SettingsRepository
 
     fun deleteAllMoodData() {
         viewModelScope.launch {
-//            settingsRepository.deleteAllMoodData()
+            settingsRepository.deleteAllMoodData()
             settingsRepository.updateFirstTime(true)
         }
     }
