@@ -85,7 +85,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun DebugFeelWellTheme(
+fun FeelWellTheme(
     darkTheme: Boolean = false,//isSystemInDarkTheme(),
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit

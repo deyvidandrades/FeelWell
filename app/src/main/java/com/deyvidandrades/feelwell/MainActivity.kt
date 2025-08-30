@@ -38,7 +38,7 @@ import com.deyvidandrades.feelwell.ui.screens.main.MainScreenViewModel
 import com.deyvidandrades.feelwell.ui.screens.mood.NewMoodViewModel
 import com.deyvidandrades.feelwell.ui.screens.settings.SettingsScreenViewModel
 import com.deyvidandrades.feelwell.ui.screens.start.StartScreenViewModel
-import com.deyvidandrades.feelwell.ui.theme.DebugFeelWellTheme
+import com.deyvidandrades.feelwell.ui.theme.FeelWellTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val settings by settingsScreenViewModel.stateFlowSettings.collectAsStateWithLifecycle()
 
-            DebugFeelWellTheme(darkTheme = settings.isDarkTheme) {
+            FeelWellTheme(darkTheme = settings.isDarkTheme) {
                 var hasNotificationPermission by remember { mutableStateOf(true) }
 
                 ApplyStatusBarStyle(settings.isDarkTheme)
