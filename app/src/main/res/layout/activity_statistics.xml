@@ -135,7 +135,6 @@
                 <!--x 20-->
                 <!--x = 360*20/100-->
                 <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/progress2"
                     android:layout_width="144dp"
                     android:layout_height="144dp"
                     android:layout_gravity="center_horizontal"
@@ -149,7 +148,6 @@
                     app:trackThickness="16dp" />
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/progress3"
                     android:layout_width="144dp"
                     android:layout_height="144dp"
                     android:layout_gravity="center_horizontal"
@@ -163,7 +161,6 @@
                     app:trackThickness="16dp" />
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/progress4"
                     android:layout_width="144dp"
                     android:layout_height="144dp"
                     android:layout_gravity="center_horizontal"
@@ -177,7 +174,6 @@
                     app:trackThickness="16dp" />
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/progress5"
                     android:layout_width="144dp"
                     android:layout_height="144dp"
                     android:layout_gravity="center_horizontal"

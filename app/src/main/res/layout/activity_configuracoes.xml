@@ -9,7 +9,6 @@
     tools:context=".activities.ConfiguracoesActivity">
 
     <RelativeLayout
-        android:id="@+id/menu_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
@@ -51,7 +50,6 @@
             android:rotation="-10" />
 
         <TextView
-            android:id="@+id/bem_vindo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

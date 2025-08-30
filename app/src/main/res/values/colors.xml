@@ -5,7 +5,7 @@
 
     <color name="text">#0F2F52</color><!--#5F5C68-->
     <color name="textLight">#FBFCFE</color><!--#E2E1E8 #f4f4f4-->
-    <color name="textDark">#C7DDF5</color><!--#DBE2EA-->
+    <!--#DBE2EA-->
 
     <color name="accent">#A5C8EE</color><!--#A3C7EE-->
 
