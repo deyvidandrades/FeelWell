@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">FeelWell</string>
+    <string name="app_name" translatable="false">FeelWell</string>
     <string name="canal_para_notificacoes_de_progresso">Notificações diarias</string>
-    <string name="quick_action">quick_action</string>
+    <string name="quick_action" translatable="false">quick_action</string>
     <string name="confirmar">Confirmar</string>
     <string name="cancelar">Cancelar</string>
-    <string name="termos_url">https://deyvidandrades.github.io/FeelWell/politica/</string>
+    <string name="termos_url" translatable="false">https://deyvidandrades.github.io/FeelWell/politica/</string>
     <string name="ola">Olá,</string>
-    <string name="home">Home</string>
-    <string name="stats">Stats</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="stats" translatable="false">Stats</string>
     <string name="hora_de_acompanhar">Hora de acompanhar</string>
     <string name="suas_emocoes">suas emoções</string>
-    <string name="emoji">😌</string>
+    <string name="emoji" translatable="false">😌</string>
     <string name="pronto_para_comecar">Pronto para começar?</string>
     <string name="vamos_ajudar_voce_a_configurar_o_app">Vamos ajudar você a configurar o app em poucos passos!</string>
     <string name="continuar">Continuar</string>
