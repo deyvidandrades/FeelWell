@@ -88,7 +88,9 @@ class MainScreenViewModel(private val moodDataRepository: MoodDataRepository, se
         val totalCount = moods.count()
         val positiveCount = moods.count { it.mood.isPositive }
 
-        (positiveCount * 100f) / totalCount
+        if (totalCount != 0)
+            (positiveCount * 100f) / totalCount
+        else 0f
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000),
