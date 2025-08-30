@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">debugFeelWell</string>
+    <string name="app_name">FeelWell</string>
     <string name="canal_para_notificacoes_de_progresso">Notificações diarias</string>
     <string name="quick_action">quick_action</string>
     <string name="confirmar">Confirmar</string>
