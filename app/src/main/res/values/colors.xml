@@ -1,21 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="background">#D8E8F8</color><!--#E3ECF6-->
-    <color name="backgroundLight">#0F2F52</color><!--322B47-->
-
-    <color name="text">#0F2F52</color><!--#5F5C68-->
-    <color name="textLight">#FBFCFE</color><!--#E2E1E8 #f4f4f4-->
-    <!--#DBE2EA-->
-
-    <color name="accent">#A5C8EE</color><!--#A3C7EE-->
-
-    <!--    <color name="amarelo">#F9BE4C</color>-->
-    <!--    <color name="vermelho">#F6789D</color>-->
-
-    <color name="transparent">#00000000</color>
-    <color name="blue">#3D8ADB</color>
-    <color name="purple">#DB3DD9</color>
-    <color name="orange">#DB8F3D</color>
-    <color name="green">#3DDB40</color>
-    <color name="red">#D56741</color>
-</resources>
+<resources/>
