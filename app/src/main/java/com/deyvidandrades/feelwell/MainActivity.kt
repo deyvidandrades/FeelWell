@@ -1,29 +1,19 @@
 package com.deyvidandrades.feelwell
 
-import android.Manifest
 import android.app.Activity
-import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity
-import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
-import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -63,21 +53,16 @@ class MainActivity : ComponentActivity() {
             val settings by settingsScreenViewModel.stateFlowSettings.collectAsStateWithLifecycle()
 
             FeelWellTheme(darkTheme = settings.isDarkTheme) {
-                var hasNotificationPermission by remember { mutableStateOf(true) }
 
                 ApplyStatusBarStyle(settings.isDarkTheme)
 
-                LaunchedEffect(hasNotificationPermission) {
-                    if (hasNotificationPermission) {
-                        NotificationsHelper.criarCanalDeNotificacoes(applicationContext)
-                        WorkManagerHelper.initWorker(applicationContext, settings.notificationTime)
-                    } else {
-                        WorkManagerHelper.stopWorker(applicationContext)
-                    }
+                //check notifications
+                if (settings.notifications) {
+                    NotificationsHelper.criarCanalDeNotificacoes(applicationContext)
+                    WorkManagerHelper.initWorker(applicationContext, settings.notificationTime)
+                } else {
+                    WorkManagerHelper.stopWorker(applicationContext)
                 }
-
-                if (settings.notifications)
-                    NotificationPermissionRequester(onPermissionRequested = { hasNotificationPermission = it })
 
                 Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
                     ManualNavigation(
@@ -104,23 +89,6 @@ class MainActivity : ComponentActivity() {
             val insetsController = WindowInsetsControllerCompat(window, view)
             insetsController.isAppearanceLightStatusBars = !isDarkTheme
             insetsController.isAppearanceLightNavigationBars = !isDarkTheme
-        }
-    }
-
-    @Composable
-    fun NotificationPermissionRequester(onPermissionRequested: (Boolean) -> Unit) {
-        val context = LocalContext.current
-        val permissionLauncher = rememberLauncherForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted -> onPermissionRequested.invoke(isGranted) }
-
-        LaunchedEffect(Unit) {
-            if (ContextCompat.checkSelfPermission(
-                    context, Manifest.permission.POST_NOTIFICATIONS
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-            }
         }
     }
 }

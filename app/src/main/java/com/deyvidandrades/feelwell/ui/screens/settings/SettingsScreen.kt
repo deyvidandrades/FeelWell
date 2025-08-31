@@ -1,6 +1,10 @@
 package com.deyvidandrades.feelwell.ui.screens.settings
 
+import android.Manifest
+import android.content.pm.PackageManager
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -40,6 +44,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.ui.dialogs.ConfirmationDialog
@@ -58,6 +63,7 @@ fun SettingsScreen(settingsScreenViewModel: SettingsScreenViewModel, onBackPress
     var showDialogQuickAction3 by remember { mutableStateOf(false) }
 
     var showUserNameDialog by remember { mutableStateOf(false) }
+    var requestNotification by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
     val localUriHandler = LocalUriHandler.current
@@ -67,6 +73,10 @@ fun SettingsScreen(settingsScreenViewModel: SettingsScreenViewModel, onBackPress
 
     // Back to home on back press
     BackHandler(enabled = true) { onBackPressed.invoke() }
+
+    if (requestNotification) NotificationPermissionRequester(onPermissionRequested = {
+        settingsScreenViewModel.setNotifications(it, context)
+    })
 
     Scaffold(
         topBar = {
@@ -97,7 +107,10 @@ fun SettingsScreen(settingsScreenViewModel: SettingsScreenViewModel, onBackPress
                             settings.notifications,
                             settings.notificationTime,
                             onThemeChanged = { settingsScreenViewModel.setDarkTheme(it) },
-                            onNotificationChanged = { settingsScreenViewModel.setNotifications(it, context) },
+                            onNotificationChanged = {
+                                requestNotification = true
+                                settingsScreenViewModel.setNotifications(it, context)
+                            },
                             onNotificationTimeChanged = { settingsScreenViewModel.setNotificationTime(it, context) }
                         )
 
@@ -221,6 +234,25 @@ fun SettingsScreen(settingsScreenViewModel: SettingsScreenViewModel, onBackPress
                 onDismiss = { showDialogQuickAction3 = false }
             )
         }
+    }
+}
+
+@Composable
+fun NotificationPermissionRequester(onPermissionRequested: (Boolean) -> Unit) {
+    val context = LocalContext.current
+    val permissionLauncher =
+        rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            onPermissionRequested.invoke(isGranted)
+        }
+
+    if (ContextCompat.checkSelfPermission(
+            context,
+            Manifest.permission.POST_NOTIFICATIONS
+        ) != PackageManager.PERMISSION_GRANTED
+    ) {
+        permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+    } else {
+        onPermissionRequested.invoke(true)
     }
 }
 
