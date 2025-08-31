@@ -79,25 +79,29 @@ fun PageHome(
 
         LazyColumn(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             itemsIndexed(stateFlowMoodArray) { index, mood ->
-                val cardShape = when (index) {
-                    0 -> RoundedCornerShape(
+
+                var shape: RoundedCornerShape
+
+                if (stateFlowMoodArray.count() == 1)
+                    shape = RoundedCornerShape(24.dp)
+                else if (index == 0)
+                    shape = RoundedCornerShape(
                         topStart = 24.dp,
                         topEnd = 24.dp,
                         bottomStart = 8.dp,
                         bottomEnd = 8.dp
                     )
-
-                    stateFlowMoodArray.count() - 1 -> RoundedCornerShape(
+                else if (index == stateFlowMoodArray.count() - 1)
+                    shape = RoundedCornerShape(
                         bottomStart = 24.dp,
                         bottomEnd = 24.dp,
                         topStart = 8.dp,
                         topEnd = 8.dp
                     )
+                else
+                    shape = RoundedCornerShape(8.dp)
 
-                    else -> RoundedCornerShape(8.dp)
-                }
-
-                ItemMood(mood, cardShape, onClicked = { createdAt ->
+                ItemMood(mood, shape, onClicked = { createdAt ->
                     currentMood = stateFlowMoodArray.find { it.createdAt == createdAt }
                     showDialogMood = true
                 })
