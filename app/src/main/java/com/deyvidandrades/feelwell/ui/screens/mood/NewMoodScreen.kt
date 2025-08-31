@@ -66,7 +66,6 @@ fun NewMoodScreen(newMoodViewModel: NewMoodViewModel, onBackPressed: () -> Unit)
                 title = {
                     Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                         Text(stringResource(R.string.como_foi_seu_dia))
-                        Text("${userName}?", fontWeight = FontWeight.Bold)
                     }
                 },
                 navigationIcon = {

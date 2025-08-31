@@ -197,7 +197,8 @@ fun SettingsScreen(settingsScreenViewModel: SettingsScreenViewModel, onBackPress
                     onDismiss = { showConfirmationDialog = false }
                 )
 
-            if (showUserNameDialog) UserNameDialog( settings.userName,
+            if (showUserNameDialog) UserNameDialog(
+                settings.userName,
                 onUserNameSet = {
                     settingsScreenViewModel.setUserName(it)
                     showUserNameDialog = false
