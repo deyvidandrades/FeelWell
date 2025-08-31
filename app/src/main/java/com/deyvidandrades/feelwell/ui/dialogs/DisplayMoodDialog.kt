@@ -50,7 +50,7 @@ fun DialogDisplayMood(mood: Mood, onDismiss: () -> Unit, onDeleteMood: (Long) ->
             )
 
             Text(
-                stringResource(R.string.sentindo, mood.mood.name.lowercase().replaceFirstChar { it.uppercase() }),
+                stringResource(R.string.sentindo, stringResource(mood.mood.title)),
                 style = MaterialTheme.typography.titleMedium
             )
 

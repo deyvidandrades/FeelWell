@@ -137,7 +137,7 @@ private fun ItemStatsCardMood(quickActionAverage: QuickActionAverage, shapePosit
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("${quickActionAverage.value.toInt()}%", style = MaterialTheme.typography.displaySmall)
                 Text(
-                    quickActionAverage.mood.name.lowercase().replaceFirstChar { it.uppercase() },
+                    stringResource(quickActionAverage.mood.title),
                     style = MaterialTheme.typography.titleSmall
                 )
             }

@@ -68,7 +68,7 @@ fun StartScreen(startScreenViewModel: StartScreenViewModel, onScreenChanged: () 
     var userName by remember { mutableStateOf("") }
     var notifications by remember { mutableStateOf(false) }
     var quickAction1 by remember { mutableStateOf(Mood.MOODTYPE.FELIZ) }
-    var quickAction2 by remember { mutableStateOf(Mood.MOODTYPE.RELAXADO) }
+    var quickAction2 by remember { mutableStateOf(Mood.MOODTYPE.CALMO) }
     var quickAction3 by remember { mutableStateOf(Mood.MOODTYPE.TRISTE) }
 
     var requestNotification by remember { mutableStateOf(false) }
@@ -281,7 +281,7 @@ private fun CardQuickActions(onBackClicked: () -> Unit, onNextClicked: (Mood.MOO
     var showQuickActionDialog3 by remember { mutableStateOf(false) }
 
     var quickAction1 by remember { mutableStateOf(Mood.MOODTYPE.FELIZ) }
-    var quickAction2 by remember { mutableStateOf(Mood.MOODTYPE.RELAXADO) }
+    var quickAction2 by remember { mutableStateOf(Mood.MOODTYPE.CALMO) }
     var quickAction3 by remember { mutableStateOf(Mood.MOODTYPE.TRISTE) }
 
     Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -365,7 +365,7 @@ private fun ItemQuickAction(moodtype: Mood.MOODTYPE, cardShape: Shape, onClicked
             Text(moodtype.emoji, style = MaterialTheme.typography.titleLarge)
 
             Text(
-                stringResource(R.string.sentindo, moodtype.name.lowercase()),
+                stringResource(R.string.sentindo, stringResource(moodtype.title)),
                 Modifier.weight(1f),
                 style = MaterialTheme.typography.titleMedium
             )

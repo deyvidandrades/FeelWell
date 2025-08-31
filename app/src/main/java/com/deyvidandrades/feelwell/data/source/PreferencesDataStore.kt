@@ -38,7 +38,7 @@ class PreferencesDataStoreImpl(private val dataStore: DataStore<Preferences>) : 
                 isDarkTheme = false,
                 isFirstTime = true,
                 quickAction1 = Mood.MOODTYPE.FELIZ,
-                quickAction2 = Mood.MOODTYPE.RELAXADO,
+                quickAction2 = Mood.MOODTYPE.CALMO,
                 quickAction3 = Mood.MOODTYPE.TRISTE
             )
         }

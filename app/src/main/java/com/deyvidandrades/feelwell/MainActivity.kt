@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
         val mainScreenViewModel = MainScreenViewModel(moodDataRepository, settingsRepository)
         val startScreenViewModel = StartScreenViewModel(settingsRepository)
         val settingsScreenViewModel = SettingsScreenViewModel(settingsRepository)
-        val newMoodViewModel = NewMoodViewModel(settingsRepository, moodDataRepository)
+        val newMoodViewModel = NewMoodViewModel(moodDataRepository)
 
         setContent {
             val settings by settingsScreenViewModel.stateFlowSettings.collectAsStateWithLifecycle()

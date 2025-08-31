@@ -45,4 +45,19 @@
     <string name="fechar">Close</string>
     <string name="deletando_um_registro">Deleting a register</string>
     <string name="voce_deseja_deletar_esse_registro">Do you wish to delete this register?</string>
+    <string name="moodtype_feliz">Happy</string>
+    <string name="moodtype_calmo">Calm</string>
+    <string name="moodtype_alegre">Joyful</string>
+    <string name="moodtype_animado">Exited</string>
+    <string name="moodtype_ansioso">Anxious</string>
+    <string name="moodtype_triste">Sad</string>
+    <string name="moodtype_irritado">Angry</string>
+    <string name="moodtype_estressado">Stressed</string>
+    <string name="moodtype_cansado">Tired</string>
+    <string name="moodtype_pensativo">Thoughtful</string>
+    <string name="moodtype_entediado">Bored</string>
+    <string name="moodtype_curioso">Curious</string>
+    <string name="moodtype_confuso">Confused</string>
+    <string name="moodtype_esperancoso">Hopeful</string>
+    <string name="moodtype_amado">Loved</string>
 </resources>

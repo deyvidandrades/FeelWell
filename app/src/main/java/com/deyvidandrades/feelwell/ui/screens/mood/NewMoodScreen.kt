@@ -40,21 +40,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.data.model.Mood
 import com.deyvidandrades.feelwell.ui.screens.main.pages.CardPosition
-import com.deyvidandrades.feelwell.ui.screens.settings.NotificationPermissionRequester
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewMoodScreen(newMoodViewModel: NewMoodViewModel, onBackPressed: () -> Unit) {
-    val userName by newMoodViewModel.stateFlowUserName.collectAsStateWithLifecycle()
-
     var moodSelected by remember { mutableStateOf(Mood.MOODTYPE.NONE) }
     var moodReasonArray by remember { mutableStateOf(ArrayList<Mood.REASON>()) }
 
@@ -209,7 +204,7 @@ private fun ItemMoodType(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(moodType.emoji, style = MaterialTheme.typography.displaySmall)
                     Text(
-                        moodType.name.lowercase().replaceFirstChar { it.uppercase() },
+                        stringResource(moodType.title),
                         style = MaterialTheme.typography.titleSmall,
                         softWrap = false,
                         overflow = TextOverflow.Clip

@@ -181,7 +181,7 @@ private fun ItemMood(mood: Mood, cardShape: Shape, onClicked: (Long) -> Unit) {
             Text(mood.mood.emoji, style = MaterialTheme.typography.titleLarge)
 
             Text(
-                stringResource(R.string.sentindo, mood.mood.name.lowercase()),
+                stringResource(R.string.sentindo, stringResource(mood.mood.title).lowercase()),
                 style = MaterialTheme.typography.titleMedium
             )
         }
@@ -229,7 +229,7 @@ private fun ItemStatsCard(quickActionAverage: QuickActionAverage, shapePosition:
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("${quickActionAverage.value.toInt()}%", style = MaterialTheme.typography.displaySmall)
                 Text(
-                    quickActionAverage.mood.name.lowercase().replaceFirstChar { it.uppercase() },
+                    stringResource(quickActionAverage.mood.title),
                     style = MaterialTheme.typography.titleSmall,
                     softWrap = false,
                     overflow = TextOverflow.Clip

@@ -2,6 +2,7 @@ package com.deyvidandrades.feelwell.data.model
 
 import android.icu.util.Calendar
 import android.text.format.DateUtils
+import com.deyvidandrades.feelwell.R
 import kotlinx.serialization.Serializable
 import java.time.Instant
 import java.time.ZoneId
@@ -17,23 +18,25 @@ data class Mood(
     @Suppress("unused")
     enum class REASON { NONE, EU, FAMILIA, FRIENDS, RELACIONAMENTOS, SAUDE, TRABALHO }
 
-    enum class MOODTYPE(val emoji: String, val isPositive: Boolean = false) {
-        NONE(""),
-        FELIZ("\uD83D\uDE0A", true),
-        TRISTE("\uD83D\uDE1E"),
-        ANIMADO("\uD83D\uDE03", true),
-        ANSIOSO("\uD83D\uDE30"),
-        RAIVA("\uD83D\uDE21"),
-        RELAXADO("\uD83D\uDE0C", true),
-        ESTRESSADO("\uD83D\uDE2B"),
-        SOZINHO("\uD83D\uDE14"),
-        CONFIANTE("\uD83D\uDE0E", true),
-        GRATO("\uD83D\uDE4F", true),
-        PREOCUPADO("\uD83D\uDE1F"),
-        FRUSTRADO("\uD83D\uDE24"),
-        DECEPCIONADO("\uD83D\uDE1E"),
-        SOBRECARREGADO("\uD83D\uDE29"),
-        INSEGURO("\uD83E\uDD7A")
+    enum class TYPE { POSITIVE, NEUTRAL, NEGATIVE }
+
+    enum class MOODTYPE(val title: Int, val emoji: String, val type: TYPE) {
+        NONE(-1, "", TYPE.NEUTRAL),
+        FELIZ(R.string.moodtype_feliz, "😊", TYPE.POSITIVE),
+        CALMO(R.string.moodtype_calmo, "\uD83D\uDE0C", TYPE.POSITIVE),
+        ALEGRE(R.string.moodtype_alegre, "\uD83D\uDE04", TYPE.POSITIVE),
+        ANIMADO(R.string.moodtype_animado, "\uD83E\uDD29", TYPE.POSITIVE),
+        ANSIOSO(R.string.moodtype_ansioso, "\uD83D\uDE25", TYPE.NEGATIVE),
+        TRISTE(R.string.moodtype_triste, "\uD83D\uDE14", TYPE.NEGATIVE),
+        IRRITADO(R.string.moodtype_irritado, "\uD83D\uDE21", TYPE.NEGATIVE),
+        ESTRESSADO(R.string.moodtype_estressado, "\uD83D\uDE2B", TYPE.NEGATIVE),
+        CANSADO(R.string.moodtype_cansado, "\uD83D\uDE34", TYPE.NEGATIVE),
+        PENSATIVO(R.string.moodtype_pensativo, "\uD83E\uDD14", TYPE.NEUTRAL),
+        ENTEDIADO(R.string.moodtype_entediado, "\uD83D\uDE10", TYPE.NEUTRAL),
+        CURIOSO(R.string.moodtype_curioso, "\uD83E\uDDD0", TYPE.NEUTRAL),
+        CONFUSO(R.string.moodtype_confuso, "\uD83D\uDE15", TYPE.NEUTRAL),
+        ESPERANCOSO(R.string.moodtype_esperancoso, "\uD83D\uDE07", TYPE.POSITIVE),
+        AMADO(R.string.moodtype_amado, "\uD83E\uDD70", TYPE.POSITIVE),
     }
 
     fun getMonthString(): String {

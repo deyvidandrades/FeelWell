@@ -72,7 +72,7 @@ fun QuickActionDialog(onActionSelected: (Mood.MOODTYPE) -> Unit, onDismiss: () -
                     }
 
                     ItemButton(
-                        "${mood.emoji} ${mood.name.lowercase().replaceFirstChar { it.uppercase() }}",
+                        "${mood.emoji} ${stringResource(mood.title)}",
                         shape,
                         Icons.AutoMirrored.Rounded.KeyboardArrowRight,
                         onClicked = {

@@ -10,6 +10,6 @@ data class Settings(
     var isDarkTheme: Boolean,
     var isFirstTime: Boolean,
     var quickAction1: Mood.MOODTYPE = Mood.MOODTYPE.FELIZ,
-    var quickAction2: Mood.MOODTYPE = Mood.MOODTYPE.RELAXADO,
+    var quickAction2: Mood.MOODTYPE = Mood.MOODTYPE.CALMO,
     var quickAction3: Mood.MOODTYPE = Mood.MOODTYPE.TRISTE
 )

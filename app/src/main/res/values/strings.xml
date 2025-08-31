@@ -50,4 +50,19 @@
     <string name="fechar">Fechar</string>
     <string name="deletando_um_registro">Deletando um registro</string>
     <string name="voce_deseja_deletar_esse_registro">Você deseja deletar esse registro?</string>
+    <string name="moodtype_feliz">Feliz</string>
+    <string name="moodtype_calmo">Calmo</string>
+    <string name="moodtype_alegre">Alegre</string>
+    <string name="moodtype_animado">Animado</string>
+    <string name="moodtype_ansioso">Ansioso</string>
+    <string name="moodtype_triste">Triste</string>
+    <string name="moodtype_irritado">Irritado</string>
+    <string name="moodtype_estressado">Estressado</string>
+    <string name="moodtype_cansado">Cansado</string>
+    <string name="moodtype_pensativo">Pensativo</string>
+    <string name="moodtype_entediado">Entediado</string>
+    <string name="moodtype_curioso">Curioso</string>
+    <string name="moodtype_confuso">Confuso</string>
+    <string name="moodtype_esperancoso">Esperançoso</string>
+    <string name="moodtype_amado">Amado</string>
 </resources>

@@ -60,7 +60,7 @@ class MainScreenViewModel(private val moodDataRepository: MoodDataRepository, se
         started = SharingStarted.WhileSubscribed(5000),
         initialValue = arrayListOf(
             QuickActionAverage(Mood.MOODTYPE.FELIZ, 0f),
-            QuickActionAverage(Mood.MOODTYPE.RELAXADO, 0f),
+            QuickActionAverage(Mood.MOODTYPE.CALMO, 0f),
             QuickActionAverage(Mood.MOODTYPE.TRISTE, 0f)
         )
     )
@@ -79,14 +79,14 @@ class MainScreenViewModel(private val moodDataRepository: MoodDataRepository, se
         started = SharingStarted.WhileSubscribed(5000),
         initialValue = arrayListOf(
             QuickActionAverage(Mood.MOODTYPE.FELIZ, 0f),
-            QuickActionAverage(Mood.MOODTYPE.RELAXADO, 0f),
+            QuickActionAverage(Mood.MOODTYPE.CALMO, 0f),
             QuickActionAverage(Mood.MOODTYPE.TRISTE, 0f)
         )
     )
 
     val stateFlowPositiveEmotions: StateFlow<Float> = stateFlowMoodArray.map { moods ->
         val totalCount = moods.count()
-        val positiveCount = moods.count { it.mood.isPositive }
+        val positiveCount = moods.count { it.mood.type == Mood.TYPE.POSITIVE }
 
         if (totalCount != 0)
             (positiveCount * 100f) / totalCount
