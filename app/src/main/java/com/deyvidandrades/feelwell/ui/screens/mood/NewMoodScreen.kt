@@ -1,5 +1,6 @@
 package com.deyvidandrades.feelwell.ui.screens.mood
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -46,6 +47,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.data.model.Mood
 import com.deyvidandrades.feelwell.ui.screens.main.pages.CardPosition
+import com.deyvidandrades.feelwell.ui.screens.settings.NotificationPermissionRequester
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -55,6 +57,8 @@ fun NewMoodScreen(newMoodViewModel: NewMoodViewModel, onBackPressed: () -> Unit)
 
     var moodSelected by remember { mutableStateOf(Mood.MOODTYPE.NONE) }
     var moodReasonArray by remember { mutableStateOf(ArrayList<Mood.REASON>()) }
+
+    BackHandler(enabled = true) { onBackPressed.invoke() }
 
     Scaffold(
         topBar = {
