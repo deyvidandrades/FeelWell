@@ -1,0 +1,99 @@
+package com.deyvidandrades.feelwell
+
+import android.app.Activity
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.LocalActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.deyvidandrades.feelwell.data.helpers.NotificationsHelper
+import com.deyvidandrades.feelwell.data.helpers.WorkManagerHelper
+import com.deyvidandrades.feelwell.data.repository.MoodDataRepositoryImpl
+import com.deyvidandrades.feelwell.data.repository.SettingsRepositoryImpl
+import com.deyvidandrades.feelwell.data.source.PreferencesDataStoreImpl
+import com.deyvidandrades.feelwell.ui.navigation.ManualNavigation
+import com.deyvidandrades.feelwell.ui.navigation.ManualNavigationViewModel
+import com.deyvidandrades.feelwell.ui.screens.main.MainScreenViewModel
+import com.deyvidandrades.feelwell.ui.screens.mood.NewMoodViewModel
+import com.deyvidandrades.feelwell.ui.screens.settings.SettingsScreenViewModel
+import com.deyvidandrades.feelwell.ui.screens.start.StartScreenViewModel
+import com.deyvidandrades.feelwell.ui.theme.FeelWellTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        //DataStore
+        val preferencesDataStore = PreferencesDataStoreImpl(dataStore)
+
+        //Bundle
+        val intent = intent
+        val addNewMood = intent.extras?.getBoolean("addNewMood", false) ?: false
+
+        //Repositories
+        val moodDataRepository = MoodDataRepositoryImpl(preferencesDataStore)
+        val settingsRepository = SettingsRepositoryImpl(preferencesDataStore)
+
+        //ViewModels
+        val manualNavigationViewModel = ManualNavigationViewModel(settingsRepository, addNewMood)
+        val mainScreenViewModel = MainScreenViewModel(moodDataRepository, settingsRepository)
+        val startScreenViewModel = StartScreenViewModel(settingsRepository)
+        val settingsScreenViewModel = SettingsScreenViewModel(settingsRepository)
+        val newMoodViewModel = NewMoodViewModel(moodDataRepository)
+
+        setContent {
+            val settings by settingsScreenViewModel.stateFlowSettings.collectAsStateWithLifecycle()
+
+            FeelWellTheme(darkTheme = settings.isDarkTheme) {
+
+                ApplyStatusBarStyle(settings.isDarkTheme)
+
+                //check notifications
+                if (settings.notifications) {
+                    NotificationsHelper.criarCanalDeNotificacoes(applicationContext)
+                    WorkManagerHelper.initWorker(applicationContext, settings.notificationTime)
+                } else {
+                    WorkManagerHelper.stopWorker(applicationContext)
+                }
+
+                Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+                    ManualNavigation(
+                        manualNavigationViewModel,
+                        mainScreenViewModel,
+                        startScreenViewModel,
+                        settingsScreenViewModel,
+                        newMoodViewModel
+                    )
+                }
+            }
+        }
+    }
+
+    @Composable
+    fun ApplyStatusBarStyle(isDarkTheme: Boolean) {
+        val view = LocalView.current
+        val activity = LocalActivity.current as Activity
+
+        SideEffect {
+            val window = activity.window
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+
+            val insetsController = WindowInsetsControllerCompat(window, view)
+            insetsController.isAppearanceLightStatusBars = !isDarkTheme
+            insetsController.isAppearanceLightNavigationBars = !isDarkTheme
+        }
+    }
+}
+
