@@ -4,7 +4,7 @@
     <string name="quick_action" translatable="false">quick_action</string>
     <string name="confirmar">Confirmar</string>
     <string name="cancelar">Cancelar</string>
-    <string name="termos_url" translatable="false">https://deyvidandrades.github.io/FeelWell/politica/</string>
+    <string name="termos_url" translatable="false">https://deyvidandrades.github.io/FeelWell/termos/</string>
     <string name="ola">Olá,</string>
     <string name="home" translatable="false">Home</string>
     <string name="stats" translatable="false">Stats</string>
