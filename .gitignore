@@ -17,3 +17,7 @@ local.properties
 /Screenshots
 gradlew
 gradlew.bat
+*.hprof
+/app/release/app-release.aab
+/app/release/output-metadata.json
+/app/src/main/spa_200dp.svg
