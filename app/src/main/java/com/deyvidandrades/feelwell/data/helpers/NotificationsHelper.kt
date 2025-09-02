@@ -50,21 +50,21 @@ object NotificationsHelper {
 
         val pendingIntentQuickAction1 = PendingIntent.getBroadcast(
             context,
-            0,
+            1,
             intentQuickAction1,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val pendingIntentQuickAction2 = PendingIntent.getBroadcast(
             context,
-            0,
+            2,
             intentQuickAction2,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val pendingIntentQuickAction3 = PendingIntent.getBroadcast(
             context,
-            0,
+            3,
             intentQuickAction3,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
