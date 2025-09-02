@@ -38,6 +38,11 @@ fun ManualNavigation(
         if (isFirstTime) currentScreen = SCREENS.START
     }
 
+    if (manualNavigationViewModel.isNewMood) {
+        currentScreen = SCREENS.ADD_MOOD
+        manualNavigationViewModel.isNewMood = false
+    }
+
     when (currentScreen) {
         SCREENS.LOADING -> Loading()
 

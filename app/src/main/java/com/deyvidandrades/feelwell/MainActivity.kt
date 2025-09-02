@@ -38,12 +38,16 @@ class MainActivity : ComponentActivity() {
         //DataStore
         val preferencesDataStore = PreferencesDataStoreImpl(dataStore)
 
+        //Bundle
+        val intent = intent
+        val addNewMood = intent.extras?.getBoolean("addNewMood", false) ?: false
+
         //Repositories
         val moodDataRepository = MoodDataRepositoryImpl(preferencesDataStore)
         val settingsRepository = SettingsRepositoryImpl(preferencesDataStore)
 
         //ViewModels
-        val manualNavigationViewModel = ManualNavigationViewModel(settingsRepository)
+        val manualNavigationViewModel = ManualNavigationViewModel(settingsRepository, addNewMood)
         val mainScreenViewModel = MainScreenViewModel(moodDataRepository, settingsRepository)
         val startScreenViewModel = StartScreenViewModel(settingsRepository)
         val settingsScreenViewModel = SettingsScreenViewModel(settingsRepository)
