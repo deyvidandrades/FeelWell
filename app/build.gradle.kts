@@ -15,8 +15,8 @@ android {
         applicationId = "com.deyvidandrades.feelwell"
         minSdk = 35
         targetSdk = 36
-        versionCode = 4
-        versionName = "0.1.9"
+        versionCode = 5
+        versionName = "0.1.10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
