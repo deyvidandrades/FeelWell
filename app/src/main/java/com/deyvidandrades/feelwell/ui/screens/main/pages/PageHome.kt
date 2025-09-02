@@ -139,7 +139,7 @@ private fun CardAddTodayMood(onClick: () -> Unit) {
                     .weight(1f)
             ) {
                 Text(
-                    stringResource(R.string.como_voce_esta_se_sentindo_hoje),
+                    stringResource(R.string.como_esta_seu_mood_hoje),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }

@@ -24,7 +24,7 @@ class NotificationsWorker(val context: Context, workerParams: WorkerParameters) 
                 NotificationsHelper.enviarNotificacao(
                     applicationContext,
                     context.getString(R.string.hora_de_registrar_seu_mood),
-                    context.getString(R.string.como_voce_esta_se_sentindo),
+                    context.getString(R.string.como_foi_seu_dia),
                     settings.quickAction1,
                     settings.quickAction2,
                     settings.quickAction3

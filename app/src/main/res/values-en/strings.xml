@@ -18,12 +18,11 @@
     <string name="voce_pode_desativar_as_notificacoes_a_qualquer_momento">You can disable notifications anytime in the settings.</string>
     <string name="terceiro_quick_actions">3. Third, Quick Actions.</string>
     <string name="configure_acoes_rapidas_para_suas_notificacoes">Set quick actions for your notifications.</string>
-    <string name="sentindo">Were feeling %1$s</string>
+    <string name="sentindo">You were %1$s</string>
     <string name="tudo_pronto">All good %1$s</string>
     <string name="vamos_comecar">lets begin?</string>
     <string name="comecar">Begin</string>
     <string name="hora_de_registrar_seu_mood">Time to register your mood!</string>
-    <string name="como_voce_esta_se_sentindo">How are you feeling?</string>
     <string name="configuracoes">Settings</string>
     <string name="acoes_rapidas">Quick Actions</string>
     <string name="seus_dados">Your data</string>
@@ -39,7 +38,6 @@
     <string name="qual_foi_o_motivo">What was it about?</string>
     <string name="salvar">Save</string>
     <string name="nada_para_mostrar">Nothing to show!</string>
-    <string name="como_voce_esta_se_sentindo_hoje">How are you feeling today?</string>
     <string name="emocoes_positivas">Positive emotions</string>
     <string name="remover">Remove</string>
     <string name="fechar">Close</string>
@@ -60,4 +58,5 @@
     <string name="moodtype_confuso">Confused</string>
     <string name="moodtype_esperancoso">Hopeful</string>
     <string name="moodtype_amado">Loved</string>
+    <string name="como_esta_seu_mood_hoje">🤔 How\'s your mood today?</string>
 </resources>
