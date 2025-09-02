@@ -1,7 +1,7 @@
 
 # FeelWell
 
-![feelwell-banner](https://raw.githubusercontent.com/deyvidandrades/FeelWell/master/feelWell-banner.png)
+![feelwell-banner](https://raw.githubusercontent.com/deyvidandrades/FeelWell/refs/heads/master/feel-well-banner1.png)
 
 O **FeelWell** é um aplicativo inovador que foi desenvolvido como projeto prátido da disciplina de Interação Humano-Computador da Universidade Federal de Lavras. Onde o objetivo foi criar uma aplicação que trabalhasse conceitos de **design centrado no humano** e que resolvesse algum problema relacionado aos **Objetivos do Desenvolvimento Sustentável (ODS)** da ONU. 
 
@@ -9,7 +9,7 @@ Para desenvolver o projeto, foquei no ODS de número 3, com foco no bem-estar e 
 
 # Informações
 
-O aplicativo, estará disponível para a plataforma Android e ideia central do projeto surgiu da necessidade de se ter um registro digital de emoções, que pode ser utilizado para realização de práticas de mindfulness e introspecção.
+O aplicativo, estará disponível para a plataforma Android e ideia central do projeto surgiu da necessidade de se ter um registro pessoal de huumor, que pode ser utilizado para realização de práticas de mindfulness e introspecção.
 
 Dessa forma, os usuários podem registrar diariamente seus sentimentos e emoções e acompanhar suas mudanças de humor/sentimentos e verificar como eles estão de modo geral, promovendo dessa forma a autoconsciência e a resiliência emocional.
 
