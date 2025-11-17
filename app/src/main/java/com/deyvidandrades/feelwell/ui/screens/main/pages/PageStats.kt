@@ -47,8 +47,14 @@ fun PageStats(stateFlowPositiveEmotions: Float, stateFlowMoodAverages: ArrayList
                     .padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Text(stringResource(R.string.emocoes_positivas), style = MaterialTheme.typography.titleLarge)
-
+                Row(
+                    Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(stringResource(R.string.emocoes_positivas), style = MaterialTheme.typography.titleLarge)
+                    Text("${stateFlowPositiveEmotions.toInt()}%", style = MaterialTheme.typography.titleSmall)
+                }
                 LinearProgressIndicator(
                     progress = { stateFlowPositiveEmotions / 100f },
                     color = MaterialTheme.colorScheme.secondary,
@@ -58,10 +64,6 @@ fun PageStats(stateFlowPositiveEmotions: Float, stateFlowMoodAverages: ArrayList
                     trackColor = MaterialTheme.colorScheme.surfaceVariant,
                 )
 
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text("${stateFlowPositiveEmotions.toInt()}%", style = MaterialTheme.typography.titleSmall)
-                    Text("${100 - stateFlowPositiveEmotions.toInt()}%", style = MaterialTheme.typography.titleSmall)
-                }
             }
         }
 
