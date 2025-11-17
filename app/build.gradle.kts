@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    id("com.android.application") version "8.12.2"
-    id("org.jetbrains.kotlin.android") version "2.2.10"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.10"
+    id("com.android.application") version "8.13.1"
+    id("org.jetbrains.kotlin.android") version "2.2.21"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.21"
     kotlin("plugin.serialization") version "1.9.10"
 }
 
@@ -44,19 +44,19 @@ android {
 dependencies {
     //Core libs
     implementation("androidx.core:core-ktx:1.17.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.3")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.4")
 
     //Compose
-    implementation("androidx.activity:activity-compose:1.10.1")
-    implementation(platform("androidx.compose:compose-bom:2025.08.01"))
-    implementation("androidx.compose.ui:ui:1.9.0")
-    implementation("androidx.compose.ui:ui-graphics:1.9.0")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.9.0")
-    implementation("androidx.compose.material3:material3:1.3.2")
+    implementation("androidx.activity:activity-compose:1.11.0")
+    implementation(platform("androidx.compose:compose-bom:2025.11.00"))
+    implementation("androidx.compose.ui:ui:1.9.4")
+    implementation("androidx.compose.ui:ui-graphics:1.9.4")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.9.4")
+    implementation("androidx.compose.material3:material3:1.4.0")
     implementation("androidx.compose.material:material-icons-extended")
 
     //Android components
-    implementation("androidx.work:work-runtime-ktx:2.10.3")
+    implementation("androidx.work:work-runtime-ktx:2.11.0")
     implementation("androidx.datastore:datastore-preferences:1.1.7")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 
@@ -68,8 +68,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2025.08.01"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.9.0")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.9.0")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.9.0")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2025.11.00"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.9.4")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.9.4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.9.4")
 }
