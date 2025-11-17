@@ -202,7 +202,10 @@ private fun CardUserName(onBackClicked: () -> Unit, onNameSet: (String) -> Unit)
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             TextField(
                 value = inputText,
-                onValueChange = { inputText = it },
+                onValueChange = {
+                    if (it.length <= 50)
+                        inputText = it
+                },
                 colors = TextFieldDefaults.colors(
                     unfocusedContainerColor = MaterialTheme.colorScheme.surfaceDim,
                     focusedContainerColor = MaterialTheme.colorScheme.surfaceDim
@@ -275,7 +278,10 @@ private fun CardNotificationPermission(onBackClicked: () -> Unit, onNotification
 }
 
 @Composable
-private fun CardQuickActions(onBackClicked: () -> Unit, onNextClicked: (Mood.MOODTYPE, Mood.MOODTYPE, Mood.MOODTYPE) -> Unit) {
+private fun CardQuickActions(
+    onBackClicked: () -> Unit,
+    onNextClicked: (Mood.MOODTYPE, Mood.MOODTYPE, Mood.MOODTYPE) -> Unit
+) {
     var showQuickActionDialog1 by remember { mutableStateOf(false) }
     var showQuickActionDialog2 by remember { mutableStateOf(false) }
     var showQuickActionDialog3 by remember { mutableStateOf(false) }
@@ -287,7 +293,10 @@ private fun CardQuickActions(onBackClicked: () -> Unit, onNextClicked: (Mood.MOO
     Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(stringResource(R.string.terceiro_quick_actions), style = MaterialTheme.typography.titleLarge)
 
-        Text(stringResource(R.string.configure_acoes_rapidas_para_suas_notificacoes), style = MaterialTheme.typography.bodyLarge)
+        Text(
+            stringResource(R.string.configure_acoes_rapidas_para_suas_notificacoes),
+            style = MaterialTheme.typography.bodyLarge
+        )
 
         Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             ItemQuickAction(
@@ -384,7 +393,11 @@ private fun CardReady(userName: String, onNextClicked: () -> Unit) {
         Text(stringResource(R.string.emoji), style = MaterialTheme.typography.titleLarge, fontSize = 48.sp)
 
         Text(stringResource(R.string.tudo_pronto, userName.split(" ")[0]), style = MaterialTheme.typography.titleLarge)
-        Text(stringResource(R.string.vamos_comecar), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+        Text(
+            stringResource(R.string.vamos_comecar),
+            style = MaterialTheme.typography.titleLarge,
+            fontWeight = FontWeight.Bold
+        )
 
         Spacer(Modifier.padding(vertical = 24.dp))
 

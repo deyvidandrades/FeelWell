@@ -49,7 +49,10 @@ fun UserNameDialog(currentName: String, onUserNameSet: (String) -> Unit, onDismi
 
             TextField(
                 value = input,
-                onValueChange = { input = it },
+                onValueChange = {
+                    if (it.length <= 50)
+                        input = it
+                },
                 colors = TextFieldDefaults.colors(
                     unfocusedContainerColor = MaterialTheme.colorScheme.surfaceDim,
                     focusedContainerColor = MaterialTheme.colorScheme.surfaceDim
