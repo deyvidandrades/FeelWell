@@ -17,7 +17,7 @@ class SettingsScreenViewModel(private val settingsRepository: SettingsRepository
 
     val stateFlowSettings: StateFlow<Settings> = settingsRepository.settings.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.Companion.WhileSubscribed(5000),
+        started = SharingStarted.WhileSubscribed(5000),
         initialValue = Settings("", true, 20, isDarkTheme = false, isFirstTime = true)
     )
 

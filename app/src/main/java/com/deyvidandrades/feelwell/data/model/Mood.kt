@@ -15,7 +15,6 @@ data class Mood(
     val reasons: ArrayList<REASON> = ArrayList(),
     val createdAt: Long = Calendar.getInstance().timeInMillis
 ) {
-    @Suppress("unused")
     enum class REASON { NONE, EU, FAMILIA, FRIENDS, RELACIONAMENTOS, SAUDE, TRABALHO }
 
     enum class TYPE { POSITIVE, NEUTRAL, NEGATIVE }

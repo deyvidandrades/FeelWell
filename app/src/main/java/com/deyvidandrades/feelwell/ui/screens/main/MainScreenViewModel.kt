@@ -20,7 +20,7 @@ class MainScreenViewModel(private val moodDataRepository: MoodDataRepository, se
 
     val stateFlowUserName: StateFlow<String> = settingsRepository.settings.map { it.userName }.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.Companion.WhileSubscribed(5000),
+        started = SharingStarted.WhileSubscribed(5000),
         initialValue = ""
     )
 
@@ -28,7 +28,7 @@ class MainScreenViewModel(private val moodDataRepository: MoodDataRepository, se
         array.sortedByDescending { it.createdAt }.toCollection(ArrayList())
     }.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.Companion.WhileSubscribed(5000),
+        started = SharingStarted.WhileSubscribed(5000),
         initialValue = arrayListOf()
     )
 
@@ -36,7 +36,7 @@ class MainScreenViewModel(private val moodDataRepository: MoodDataRepository, se
         array.find { it.isToday() } ?: Mood(Mood.MOODTYPE.NONE)
     }.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.Companion.WhileSubscribed(5000),
+        started = SharingStarted.WhileSubscribed(5000),
         initialValue = Mood(Mood.MOODTYPE.NONE)
     )
 

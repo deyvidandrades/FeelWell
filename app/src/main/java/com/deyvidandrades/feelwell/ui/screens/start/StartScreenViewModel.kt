@@ -14,7 +14,7 @@ class StartScreenViewModel(private val settingsRepository: SettingsRepository) :
 
     val stateFlowIsFirstTime: StateFlow<Boolean> = settingsRepository.settings.map { it.isFirstTime }.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.Companion.WhileSubscribed(5000),
+        started = SharingStarted.WhileSubscribed(5000),
         initialValue = true
     )
 
