@@ -45,6 +45,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getString
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.deyvidandrades.feelwell.R
 import com.deyvidandrades.feelwell.ui.dialogs.ConfirmationDialog
@@ -185,7 +186,7 @@ fun SettingsScreen(settingsScreenViewModel: SettingsScreenViewModel, onBackPress
                                 ),
                                 Icons.AutoMirrored.Rounded.KeyboardArrowRight,
                                 onClicked = {
-                                    localUriHandler.openUri(context.getString(R.string.termos_url))
+                                    localUriHandler.openUri(getString(context, R.string.termos_url))
                                 }
                             )
                         }
