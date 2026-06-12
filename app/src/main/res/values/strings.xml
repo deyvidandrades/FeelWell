@@ -12,13 +12,13 @@
     <string name="suas_emocoes">suas emoções</string>
     <string name="emoji" translatable="false">😌</string>
     <string name="pronto_para_comecar">Pronto para começar?</string>
-    <string name="vamos_ajudar_voce_a_configurar_o_app">Vamos ajudar você a configurar o app em poucos passos!</string>
+    <string name="vamos_ajudar_voce_a_configurar_o_app">Vamos ajudar você a configurar o aplicativo em poucos passos!</string>
     <string name="continuar">Continuar</string>
     <string name="primeiro_qual_o_seu_nome">1. Primeiro, qual é o seu nome?</string>
     <string name="voce_pode_alterar_o_nome_nas_configuracoes">Você pode alterar o nome nas configurações.</string>
     <string name="voltar">Voltar</string>
     <string name="segundo_notificacoes">2. Segundo, notificações.</string>
-    <string name="nosso_app_envia_lembretes_diarios">Nosso app envia lembretes diários para registrar seu mood. Para funcionar corretamente, precisamos que você autorize o app a enviar notificações.</string>
+    <string name="nosso_app_envia_lembretes_diarios">Nosso aplicativo envia lembretes diários para registrar seu mood. Para funcionar corretamente, precisamos que você autorize o aplicativo a enviar notificações.</string>
     <string name="permitir">Permitir</string>
     <string name="voce_pode_desativar_as_notificacoes_a_qualquer_momento">" Você pode desativar as notificações a qualquer momento configurações."</string>
     <string name="terceiro_quick_actions">3. Terceiro, Quick Actions.</string>
